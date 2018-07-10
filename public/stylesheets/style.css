@@ -1,5 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+html {
+  background-color: #272727;
+}
+
 body {
+  font: 100% "Montserrat", sans-serif;
+  box-sizing: content-box;
+  color: #909090;
+}
+
+header {
+  background-color: #272727;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+header .logo {
+  float: left;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+header .ranking {
+  background-color: white;
+  margin-top: 70px;
+  position: relative;
+  text-transform: uppercase;
+  left: 40px;
+  overflow: hidden;
+}
+
+header .ranking h1 {
   text-align: center;
+  color: #272727;
+  padding: 5px 0;
+  font-size: 30px;
+}
+
+section {
+  background-color: white;
+}
+
+section .table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+section .table__row th, section .table__row td {
+  text-align: left;
+  padding: 8px;
+}
+
+section .table__row .name {
+  font-size: 18px;
+  -webkit-margin-after: 0px;
+}
+
+section .table__row .subtitle {
   font-size: 12px;
-  font-family: "Arial, sans-serif";
+  -webkit-margin-before: 0px;
+}
+
+section .table__row .photo {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+section .table__row .photo img {
+  width: 100%;
+}
+
+section .table__row .photo .votes {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #707070;
+  color: #707070;
+  font-size: 14px;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  top: 77%;
+  right: 0;
+  font-weight: bold;
+}
+
+section .table__row--default {
+  background-color: white;
+}
+
+section .table__row--default:nth-child(odd) {
+  background-color: white;
+}
+
+section .table__row--default:nth-child(even) {
+  background-color: #f2f1f1;
+}
+
+section .table__row--default .photo {
+  background-color: #ba3638;
+  border: 2px solid #ba3638;
+}
+
+section .table__row--default .name {
+  color: #ba3638;
+}
+
+section .table__row--default .subtitle {
+  color: #909090;
+}
+
+section .table__row--modify {
+  background-color: #ba3638 !important;
+}
+
+section .table__row--modify .photo {
+  background-color: #f2f1f1;
+  border: 2px solid #f2f1f1;
+}
+
+section .table__row--modify .name {
+  color: #f2f1f1;
+}
+
+section .table__row--modify .subtitle {
+  color: #330d0e;
 }

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$font-stack: 'Montserrat', sans-serif; 
+$primary-color: #909090;
+$header-color: #272727;
+$color-red: #ba3638;
+$color-grey: #f2f1f1;
+$soft-grey:#f2f1f1;
+$dark-red:#330d0e;
+$dark-grey:#707070;
+ 
+html {
+	background-color:$header-color;
+}
+body {
+  font: 100% $font-stack;
+  box-sizing: content-box;  
+  color:$primary-color;
+}
+header {
+	background-color:$header-color;	
+	position:relative;
+	width: 100%;
+    height: 200px;
+    overflow: hidden;
+	.logo {
+		float:left;
+	    position: absolute;
+        top: 0;
+    	z-index: 1;
+	}
+	.ranking {
+		background-color: white;    	
+	    margin-top: 70px;
+	    position: relative;
+    	text-transform: uppercase;
+	    left: 40px;
+	    overflow: hidden;
+	    h1 {
+	    	text-align: center;
+	    	color:$header-color;
+		    padding: 5px 0;
+		    font-size:30px;
+	    }
+	}
+
+}
+section {
+	background-color:white;
+	.table {
+	    border-collapse: collapse;
+	    width: 100%;	    
+		&__row {
+			th, td {
+			    text-align: left;
+			    padding: 8px;		    
+			}
+			.name {
+				font-size:18px;
+				-webkit-margin-after: 0px;
+			}
+			.subtitle {
+				font-size:12px;
+				-webkit-margin-before: 0px;
+			}
+			.photo {	    
+			    border-radius: 50%;
+			    width: 70px;
+			    height: 70px;
+			    position: relative;
+			    img {
+			    	width: 100%;
+			    }
+			    .votes {
+					width:20px;
+					height:20px;
+					border-radius:50%;
+					border: 1px solid $dark-grey;
+					color:$dark-grey;
+					font-size:14px;
+					background-color:white;
+					position: absolute;
+				    text-align: center;
+				    top: 77%;
+				    right: 0;
+				    font-weight: bold;
+				}
+			}
+			&--default {
+				background-color:white;
+				&:nth-child(odd){
+					background-color:white;
+				}
+				&:nth-child(even) {
+			    	background-color: $color-grey;
+			    }
+			    .photo { 
+			    	background-color: $color-red;
+	   				border:2px solid $color-red;
+			    }
+			    .name {
+			    	color:$color-red;			    	
+			    }	
+			    .subtitle {
+			    	color:$primary-color;			    	
+			    }			   		    
+			}
+			&--modify {
+				background-color:$color-red!important;
+				.photo { 
+			    	background-color: $soft-grey;
+	   				border:2px solid $soft-grey;
+			    }
+				.name {
+			    	color:$soft-grey;			    	
+			    }	
+			    .subtitle {
+			    	color:$dark-red;			    	
+			    }
+			}						
+		}
+	}	
+}
