@@ -72,7 +72,10 @@ section .table__row .photo {
 }
 
 section .table__row .photo img {
-  width: 100%;
+  width: 120%;
+  clip-path: ellipse(32px 32px at center);
+  margin-left: -7px;
+  margin-top: 3px;
 }
 
 section .table__row .photo .votes {
