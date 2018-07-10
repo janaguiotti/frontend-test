@@ -9,6 +9,10 @@ body {
   color: #909090;
 }
 
+.hidden {
+  display: none;
+}
+
 header {
   background-color: #272727;
   position: relative;
@@ -47,6 +51,11 @@ section {
 section .table {
   border-collapse: collapse;
   width: 100%;
+}
+
+section .table__row {
+  background-color: white;
+  display: block;
 }
 
 section .table__row th, section .table__row td {
@@ -93,28 +102,24 @@ section .table__row .photo .votes {
   font-weight: bold;
 }
 
-section .table__row--default {
+section .table__row:nth-child(odd) {
   background-color: white;
 }
 
-section .table__row--default:nth-child(odd) {
-  background-color: white;
-}
-
-section .table__row--default:nth-child(even) {
+section .table__row:nth-child(even) {
   background-color: #f2f1f1;
 }
 
-section .table__row--default .photo {
+section .table__row .photo {
   background-color: #ba3638;
   border: 2px solid #ba3638;
 }
 
-section .table__row--default .name {
+section .table__row .name {
   color: #ba3638;
 }
 
-section .table__row--default .subtitle {
+section .table__row .subtitle {
   color: #909090;
 }
 
@@ -133,4 +138,39 @@ section .table__row--modify .name {
 
 section .table__row--modify .subtitle {
   color: #330d0e;
+}
+
+section .count-votes table {
+  border-radius: 5px;
+  border: 1px solid #707070;
+  border-spacing: 0;
+  margin-left: 20px;
+}
+
+section .count-votes table thead th:last-child, section .count-votes table thead td:last-child, section .count-votes table tbody th:last-child, section .count-votes table tbody td:last-child {
+  border-left: 1px solid #707070;
+}
+
+section .count-votes table tr th, section .count-votes table tr td {
+  text-align: center;
+  padding: 8px;
+}
+
+section .count-votes table tr th {
+  background-color: #ba3638;
+  color: white;
+}
+
+section .count-votes table:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid white;
+  position: absolute;
+  margin-left: -6px;
 }

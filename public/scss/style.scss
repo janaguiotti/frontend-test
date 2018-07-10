@@ -17,6 +17,9 @@ body {
   box-sizing: content-box;  
   color:$primary-color;
 }
+.hidden {
+	display:none;
+}
 header {
 	background-color:$header-color;	
 	position:relative;
@@ -89,25 +92,24 @@ section {
 				    font-weight: bold;
 				}
 			}
-			&--default {
+			background-color:white;
+			display:block;
+			&:nth-child(odd){
 				background-color:white;
-				&:nth-child(odd){
-					background-color:white;
-				}
-				&:nth-child(even) {
-			    	background-color: $color-grey;
-			    }
-			    .photo { 
-			    	background-color: $color-red;
-	   				border:2px solid $color-red;
-			    }
-			    .name {
-			    	color:$color-red;			    	
-			    }	
-			    .subtitle {
-			    	color:$primary-color;			    	
-			    }			   		    
 			}
+			&:nth-child(even) {
+		    	background-color: $color-grey;
+		    }
+		    .photo { 
+		    	background-color: $color-red;
+   				border:2px solid $color-red;
+		    }
+		    .name {
+		    	color:$color-red;			    	
+		    }	
+		    .subtitle {
+		    	color:$primary-color;			    	
+		    }
 			&--modify {
 				background-color:$color-red!important;
 				.photo { 
@@ -121,6 +123,44 @@ section {
 			    	color:$dark-red;			    	
 			    }
 			}						
+		}
+	}
+	.count-votes {
+		table {
+			border-radius:5px;
+			border:1px solid $dark-grey;
+			border-spacing: 0;
+			margin-left: 20px;
+			thead, tbody {
+				th, td {
+					&:last-child {
+						border-left:1px solid $dark-grey;
+					}
+				}
+			}
+			tr {				
+				th, td {
+					text-align: center;
+			    	padding: 8px;
+				}
+				th {
+					background-color:$color-red;
+					color:white;
+				}
+			}
+			&:before {
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+				width: 0; 
+				height: 0; 
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent; 
+				border-right: 5px solid white; 
+			    position: absolute;
+    			margin-left: -6px;
+			}
 		}
 	}	
 }
