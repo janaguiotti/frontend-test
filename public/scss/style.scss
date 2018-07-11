@@ -50,117 +50,130 @@ header {
 }
 section {
 	background-color:white;
-	.table {
-	    border-collapse: collapse;
-	    width: 100%;	    
-		&__row {
-			th, td {
-			    text-align: left;
-			    padding: 8px;		    
-			}
-			.name {
-				font-size:18px;
-				-webkit-margin-after: 0px;
-			}
-			.subtitle {
-				font-size:12px;
-				-webkit-margin-before: 0px;
-			}
-			.photo {	    
-			    border-radius: 50%;
-			    width: 70px;
-			    height: 70px;
-			    position: relative;
-			    img {
-			    	width: 120%;
-				    clip-path: ellipse(32px 32px at center);
-				    margin-left: -7px;
-				    margin-top: 3px;
-			    }
-			    .votes {
-					width:20px;
-					height:20px;
-					border-radius:50%;
-					border: 1px solid $dark-grey;
-					color:$dark-grey;
-					font-size:14px;
-					background-color:white;
-					position: absolute;
-				    text-align: center;
-				    top: 77%;
-				    right: 0;
-				    font-weight: bold;
-				}
-			}
-			background-color:white;
-			display:block;
-			&:nth-child(odd){
-				background-color:white;
-			}
-			&:nth-child(even) {
-		    	background-color: $color-grey;
-		    }
-		    .photo { 
-		    	background-color: $color-red;
-   				border:2px solid $color-red;
-		    }
-		    .name {
-		    	color:$color-red;			    	
-		    }	
-		    .subtitle {
-		    	color:$primary-color;			    	
-		    }
-			&--modify {
-				background-color:$color-red!important;
-				.photo { 
-			    	background-color: $soft-grey;
-	   				border:2px solid $soft-grey;
-			    }
-				.name {
-			    	color:$soft-grey;			    	
-			    }	
-			    .subtitle {
-			    	color:$dark-red;			    	
-			    }
-			}						
-		}
-	}
-	.count-votes {
-		table {
-			border-radius:5px;
-			border:1px solid $dark-grey;
-			border-spacing: 0;
-			margin-left: 20px;
-			thead, tbody {
+	.main-content {
+		position:relative;
+		.table {
+		    border-collapse: collapse;
+		    width: 100%;	    
+			&__row {
 				th, td {
-					&:last-child {
-						border-left:1px solid $dark-grey;
+				    text-align: left;
+				    padding: 8px;		    
+				}
+				.name {
+					font-size:18px;
+					-webkit-margin-after: 0px;
+				}
+				.subtitle {
+					font-size:12px;
+					-webkit-margin-before: 0px;
+				}
+				.photo {	    
+				    border-radius: 50%;
+				    width: 70px;
+				    height: 70px;
+				    position: relative;
+				    img {
+				    	width: 120%;
+					    clip-path: ellipse(32px 32px at center);
+					    margin-left: -7px;
+					    margin-top: 3px;
+				    }
+				    .votes {
+						width:20px;
+						height:20px;
+						border-radius:50%;
+						border: 1px solid $dark-grey;
+						color:$dark-grey;
+						font-size:14px;
+						background-color:white;
+						position: absolute;
+					    text-align: center;
+					    top: 77%;
+					    right: 0;
+					    font-weight: bold;
 					}
 				}
-			}
-			tr {				
-				th, td {
-					text-align: center;
-			    	padding: 8px;
+				background-color:white;
+				display:block;
+				&:nth-child(odd){
+					background-color:white;
 				}
-				th {
-					background-color:$color-red;
-					color:white;
-				}
-			}
-			&:before {
-				content: "";
-				display: inline-block;
-				vertical-align: middle;
-				margin-right: 10px;
-				width: 0; 
-				height: 0; 
-				border-top: 5px solid transparent;
-				border-bottom: 5px solid transparent; 
-				border-right: 5px solid white; 
-			    position: absolute;
-    			margin-left: -6px;
+				&:nth-child(even) {
+			    	background-color: $color-grey;
+			    }
+			    .photo { 
+			    	background-color: $color-red;
+	   				border:2px solid $color-red;
+			    }
+			    .name {
+			    	color:$color-red;			    	
+			    }	
+			    .subtitle {
+			    	color:$primary-color;			    	
+			    }
+				&--modify {
+					background-color:$color-red!important;
+					.photo { 
+				    	background-color: $soft-grey;
+		   				border:2px solid $soft-grey;
+				    }
+					.name {
+				    	color:$soft-grey;			    	
+				    }	
+				    .subtitle {
+				    	color:$dark-red;			    	
+				    }
+				}						
 			}
 		}
-	}	
+		.count-votes {
+			position: absolute;
+		    right: 0;
+		    top: 8px;
+			table {
+				border-radius:5px;
+				border:1px solid $dark-grey;
+				border-spacing: 0;
+				margin-left: 20px;
+				background-color:white;
+				thead, tbody {
+					th, td {
+						&:last-child {
+							border-left:1px solid $dark-grey;
+						}
+					}
+				}
+				tr {				
+					th, td {
+						text-align: center;
+				    	padding: 8px;
+					}
+					th {
+						background-color:$color-red;
+						color:white;
+						text-transform:uppercase;
+						font-size:10px;
+					}
+					td {
+						font-size:24px;
+						font-weight: bold;
+					}
+				}
+				&:before {
+					content: "";
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					width: 0; 
+					height: 0; 
+					border-top: 5px solid transparent;
+					border-bottom: 5px solid transparent; 
+					border-right: 5px solid white; 
+				    position: absolute;
+	    			left: 15px;
+				}
+			}
+		}
+	}		
 }
