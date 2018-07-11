@@ -24,7 +24,6 @@ function slingshot(url, tplId, anchor) {
 
 		const stone = Handlebars.compile(template)(newData);
 
-
 		setTimeout(function() {
 			//show votes with click
 			var qs = document.querySelectorAll.bind(document);
@@ -35,7 +34,7 @@ function slingshot(url, tplId, anchor) {
 					elm.querySelector('.count-votes').classList.toggle('hidden');
 				});
 			});
-		},1000)
+		},500)
 
 		$(anchor).append(stone);
 	});
