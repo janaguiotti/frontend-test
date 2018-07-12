@@ -31,7 +31,6 @@ function slingshot(url, tplId, anchor) {
 				node.addEventListener("click", function(event) {
 					var elm = event.target;
 					elm.classList.toggle('table__row--modify');
-					elm.querySelector('.count-votes').classList.toggle('hidden');
 				});
 			});
 		},500)

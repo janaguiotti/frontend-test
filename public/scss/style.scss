@@ -17,9 +17,6 @@ body {
   box-sizing: content-box;  
   color:$primary-color;
 }
-.hidden {
-	display:none;
-}
 header {
 	background-color:$header-color;	
 	position:relative;
@@ -57,6 +54,8 @@ section {
 		height:100%;
 		.table {
 		    border-collapse: collapse;
+		    border-spacing: 0;
+		    display: inline-table;
 		    width: 100%;	    
 			&__row {
 				th, td {
@@ -115,8 +114,60 @@ section {
 			    .subtitle {
 			    	color:$primary-color;			    	
 			    }
+			    .count-votes {
+					position: absolute;
+				    right: 0;
+				    top: 8px;
+				    display:none;
+					table {
+						border-radius:5px;
+						border:1px solid $dark-grey;
+						border-spacing: 0;
+						margin-left: 20px;
+						background-color:white;
+						thead, tbody {
+							th, td {
+								&:last-child {
+									border-left:1px solid $dark-grey;
+								}
+							}
+						}
+						tr {				
+							th, td {
+								text-align: center;
+						    	padding: 8px;
+							}
+							th {
+								background-color:$color-red;
+								color:white;
+								text-transform:uppercase;
+								font-size:10px;
+							}
+							td {
+								font-size:24px;
+								font-weight: bold;
+							}
+						}
+						&:before {
+							content: "";
+							display: inline-block;
+							vertical-align: middle;
+							margin-right: 10px;
+							width: 0; 
+							height: 0; 
+							border-top: 5px solid transparent;
+							border-bottom: 5px solid transparent; 
+							border-right: 5px solid white; 
+						    position: absolute;
+			    			left: 15px;
+						}
+					}
+				}
 				&--modify {
 					background-color:$color-red!important;
+					.count-votes {
+						display:block;
+					}
 					.photo { 
 				    	background-color: $soft-grey;
 		   				border:2px solid $soft-grey;
@@ -129,54 +180,6 @@ section {
 				    }
 				}						
 			}
-		}
-		.count-votes {
-			position: absolute;
-		    right: 0;
-		    top: 8px;
-			table {
-				border-radius:5px;
-				border:1px solid $dark-grey;
-				border-spacing: 0;
-				margin-left: 20px;
-				background-color:white;
-				thead, tbody {
-					th, td {
-						&:last-child {
-							border-left:1px solid $dark-grey;
-						}
-					}
-				}
-				tr {				
-					th, td {
-						text-align: center;
-				    	padding: 8px;
-					}
-					th {
-						background-color:$color-red;
-						color:white;
-						text-transform:uppercase;
-						font-size:10px;
-					}
-					td {
-						font-size:24px;
-						font-weight: bold;
-					}
-				}
-				&:before {
-					content: "";
-					display: inline-block;
-					vertical-align: middle;
-					margin-right: 10px;
-					width: 0; 
-					height: 0; 
-					border-top: 5px solid transparent;
-					border-bottom: 5px solid transparent; 
-					border-right: 5px solid white; 
-				    position: absolute;
-	    			left: 15px;
-				}
-			}
-		}
+		}		
 	}		
 }

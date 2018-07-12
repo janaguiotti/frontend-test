@@ -9,10 +9,6 @@ body {
   color: #909090;
 }
 
-.hidden {
-  display: none;
-}
-
 header {
   background-color: #272727;
   position: relative;
@@ -57,6 +53,8 @@ section .main-content {
 
 section .main-content .table {
   border-collapse: collapse;
+  border-spacing: 0;
+  display: inline-table;
   width: 100%;
 }
 
@@ -130,8 +128,62 @@ section .main-content .table__row .subtitle {
   color: #909090;
 }
 
+section .main-content .table__row .count-votes {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  display: none;
+}
+
+section .main-content .table__row .count-votes table {
+  border-radius: 5px;
+  border: 1px solid #707070;
+  border-spacing: 0;
+  margin-left: 20px;
+  background-color: white;
+}
+
+section .main-content .table__row .count-votes table thead th:last-child, section .main-content .table__row .count-votes table thead td:last-child, section .main-content .table__row .count-votes table tbody th:last-child, section .main-content .table__row .count-votes table tbody td:last-child {
+  border-left: 1px solid #707070;
+}
+
+section .main-content .table__row .count-votes table tr th, section .main-content .table__row .count-votes table tr td {
+  text-align: center;
+  padding: 8px;
+}
+
+section .main-content .table__row .count-votes table tr th {
+  background-color: #ba3638;
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+section .main-content .table__row .count-votes table tr td {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+section .main-content .table__row .count-votes table:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid white;
+  position: absolute;
+  left: 15px;
+}
+
 section .main-content .table__row--modify {
   background-color: #ba3638 !important;
+}
+
+section .main-content .table__row--modify .count-votes {
+  display: block;
 }
 
 section .main-content .table__row--modify .photo {
@@ -145,53 +197,4 @@ section .main-content .table__row--modify .name {
 
 section .main-content .table__row--modify .subtitle {
   color: #330d0e;
-}
-
-section .main-content .count-votes {
-  position: absolute;
-  right: 0;
-  top: 8px;
-}
-
-section .main-content .count-votes table {
-  border-radius: 5px;
-  border: 1px solid #707070;
-  border-spacing: 0;
-  margin-left: 20px;
-  background-color: white;
-}
-
-section .main-content .count-votes table thead th:last-child, section .main-content .count-votes table thead td:last-child, section .main-content .count-votes table tbody th:last-child, section .main-content .count-votes table tbody td:last-child {
-  border-left: 1px solid #707070;
-}
-
-section .main-content .count-votes table tr th, section .main-content .count-votes table tr td {
-  text-align: center;
-  padding: 8px;
-}
-
-section .main-content .count-votes table tr th {
-  background-color: #ba3638;
-  color: white;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-
-section .main-content .count-votes table tr td {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-section .main-content .count-votes table:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid white;
-  position: absolute;
-  left: 15px;
 }
